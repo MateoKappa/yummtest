@@ -1,0 +1,383 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+  font-family: "Salsa";
+}
+.progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 5px;
+  bottom: 100px;
+}
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
+.shadow {
+  text-shadow: -25px 0px 0px rgb(202, 202, 202);
+}
+
+/* home */
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes leftToRightHome {
+  from {
+    right: 220px;
+  }
+  to {
+    width: 0px;
+    height: 350px;
+    right: 0px;
+    top: 100px;
+    position: absolute;
+  }
+}
+@keyframes HomebuttonAnimation {
+  from {
+    position: absolute;
+
+    top: 710px;
+    left: 45%;
+    width: 300px;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes HomeClipImageAnimation {
+  from {
+    position: absolute;
+    right: 50px;
+    top: 250px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes HomeBg {
+  0% {
+    background-image: url("/menu/ourDeliciousMenu.png");
+    opacity: 0.8;
+    height: 600px;
+  }
+  20% {
+    height: 675px;
+  }
+  40% {
+    background-color: #e9e9e9;
+    opacity: 0.2;
+    height: 750px;
+  }
+  60% {
+    background-color: #e9e9e9;
+    opacity: 0.6;
+    height: 825px;
+  }
+  80% {
+    background-color: #e9e9e9;
+    opacity: 0.8;
+    height: 900px;
+  }
+  100% {
+    background-color: #e9e9e9;
+    opacity: 1;
+    height: 950px;
+  }
+}
+@keyframes opacityBG {
+  from {
+    height: 950px;
+    opacity: 0;
+  }
+
+  to {
+    height: 520;
+    opacity: 1;
+  }
+}
+/* menu  */
+@keyframes galleryToMenuWind {
+  from {
+    width: 260px;
+    height: 90px;
+  }
+
+  to {
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    right: 50px;
+    top: 250px;
+    opacity: 0;
+  }
+}
+@keyframes MenubuttonAnimation {
+  from {
+    top: 520px;
+    left: 250px;
+    clip-path: inset(0 60% 0 0);
+    position: absolute;
+  }
+  to {
+    top: 710px;
+    position: absolute;
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes clipImageAnimation {
+  from {
+    position: absolute;
+    right: 0px;
+    top: 50px;
+    opacity: 1;
+  }
+
+  to {
+    position: absolute;
+    right: 50px;
+    top: 250px;
+    opacity: 0;
+  }
+}
+@keyframes bottomToCurrentWind {
+  from {
+    top: 1000px;
+  }
+
+  to {
+    top: 0;
+  }
+}
+@keyframes smallwindGalleryMenu {
+  from {
+    width: 260px;
+    height: 90px;
+    top: 535px;
+    right: calc(50% + 90px);
+  }
+
+  to {
+    width: 720px;
+    height: 250px;
+
+    right: calc(50% - 450px);
+  }
+}
+
+@keyframes rightToLeft {
+  from {
+    width: 100px;
+    height: 650px;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+  }
+  to {
+    width: 720px;
+    height: 250px;
+  }
+}
+/* gallery  */
+@keyframes windGalleryAnimation {
+  0% {
+    position: absolute;
+    top: -400px;
+    left: 100px;
+    width: 720px;
+    height: 250px;
+  }
+  100% {
+    left: 0;
+    width: 260px;
+    height: 90px;
+  }
+}
+/* contact   */
+
+@keyframes windContactAnimation {
+  from {
+  }
+  to {
+  }
+}
+.home_menu {
+  animation-name: opacityBG;
+  animation-duration: 0.4s;
+  background-position: 30% 49%;
+  background-size: cover;
+  height: 520px;
+  border-radius: 20px;
+}
+.HomeBg {
+  background-color: #e9e9e9;
+  animation: HomeBg 0.4s ease-out;
+  opacity: 1;
+}
+.clipImageAnimation {
+  animation-name: clipImageAnimation;
+  animation-duration: 0.4s;
+  opacity: 0;
+}
+.windGalleryAnimation {
+  animation: windGalleryAnimation 0.6s ease-in-out;
+}
+.opacity {
+  animation-name: opacity;
+  animation-duration: 0.4s;
+  opacity: 0;
+}
+
+.bottomToCurrentWind {
+  animation-name: bottomToCurrentWind;
+  animation-duration: 0.4s;
+}
+.rightToLeft {
+  animation-name: rightToLeft;
+  animation-duration: 0.4s;
+  position: absolute;
+  right: calc(50% - 450px);
+}
+.smallwindGalleryMenu {
+  animation: smallwindGalleryMenu 0.4s forwards linear;
+}
+
+.windHomePosition {
+  animation: leftToRightHome 0.4s forwards;
+  right: -500px;
+}
+.MenubuttonAnimation {
+  animation: MenubuttonAnimation 0.4s forwards;
+}
+.HomebuttonAnimation {
+  animation: HomebuttonAnimation 0.4s forwards;
+  position: absolute;
+  top: 500px;
+  left: 95px;
+  z-index: 20;
+}
+.HomeClipImageAnimation {
+  animation: HomeClipImageAnimation 0.4s forwards;
+}
+
+/* ///---------//// slider */
+
+@keyframes slider {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.slider {
+  animation: slider 0.8s;
+  opacity: 0;
+}
+
+.box {
+  transition: all 0.6s ease;
+}
+
+.box.BlueOne {
+  transform: translateX(calc((11px * 2) + (8px * 2)));
+}
+.box.Bluetwo {
+  transform: translateX(calc((30px * 2) + (8px * 2)));
+}
+.box.CircleOne {
+  transform: translateX(calc(0px - ((20px * 2) + (8px * 2))));
+}
+.box.CircleTwo {
+  transform: translateX(calc(0px - ((20px * 2) + (8px * 2))));
+}
+.index {
+  z-index: 20;
+}
+
+@keyframes navbarWidth {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  width: 100%;
+  overflow-y: scroll;
+  animation: navbarWidth 0.4s ease;
+  background-color: #e9e9e9;
+}
+@keyframes navbarOut {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+.navbarOut {
+  animation: navbarOut 0.4s ease;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  z-index: 100;
+  width: 100%;
+  overflow-y: scroll;
+  background-color: #e9e9e9;
+}
